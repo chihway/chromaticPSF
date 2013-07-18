@@ -1,0 +1,68 @@
+==================================================================
+Chromatic PSF effects on weak lensing and calibration
+==================================================================
+
+== MAIN GOALS ==
+
+(1) systematical clarify and quantify the contribution of chromatic effects on PSF modeling for different object type
+
+(2) we write the paper in the direction of weak lensing and cosmic shear but this can be important for other purposes
+
+(3) this is in response to PB12 but will be much more realistic and detailed 
+
+== OUTLINE ==
+
+(1) Introduction
+- dark energy, weak lensing, systematic effects
+- the PSF is color dependent, this can be due to the atmosphere (DCR+others) and the instrument (optics+detector)
+- PSF as experienced by galaxy is different from what is modeled from stars due to the difference in the star and the galaxy's SED
+- we like to understand how big these effects are in terms of weak lensing
+- we use LSST as a benchmark survey but a lot of this is general
+- mention PB12 here and their analysis and conclusions
+
+(2) Simulation
+- introduce catalog and phosim
+
+(3) Quantifying the problem
+- introduce notation
+- list and describe origin of different chromatic effects
+- list type of star/galaxy/other astronomical objects of interest
+- the galaxy population, star population, observing conditions
+- quantify the level of shear error if we do not correct for the chromatic PSF, do this step-by-step:
+  * certain object type, corrected by known PSF with same SED
+  * certain object type, corrected by known PSF with different SED => testing the actual "chromatic part"
+  * certain object type, corrected by interpolated PSF with different, (full population of) SED => testing chromatic + spatial interpolation
+  * put in realistic population of galaxies and stars, quantify the realistic level expected (absolute errors, and maybe spatial correlation of errors)
+  * for (4) and (5), we start from single object+full star population and will not repeat the first 2 steps
+- point out or show that the simple integration form and parametrization can capture some of the problem (serves as a good quick estimation) but will miss out chromatic effects other than DCR  
+
+(4) Linear calibration
+- quantify what happens with simple linear correction using imsim for each object type 
+- put in realistic population of galaxies and stars, quantify the level of residual expected (absolute errors, and maybe spatial correlation of errors)
+- point out or show that the simple integration form and parametrization can capture some of the problem (serves as a good quick estimation) but will miss out chromatic effects other than DCR  
+- still need to think about how to or whether to propagate this into shear (one option is to put the model SED through imsim and get the PSF as the PSF model and do standard PSF correction with that model)
+
+(5) Calibration with photo-z SED models
+- model the photo-z errors as a function of redshift and object type using a suite of imsim images, come up with an analytical form to parametrize the errors
+- use the analytical photo-z errors then Monte Carlo to determine the effect on PSF modeling for each object type 
+- put in realistic population of galaxies and stars, quantify the level of residual expected (absolute errors, and maybe spatial correlation of errors)
+- still need to think about how to or whether to propagate this into shear
+
+(6) Discussion
+- possibly interesting feedback to photo-z estimation
+- implication on science (weak lensing, quasars, AGNs etc.)
+- implication on other projects (Euclid etc.)
+
+==================================================================
+DESC task and relation to this paper
+==================================================================
+
+(1) this has to be more LSST specific, dark energy-specific and quantitative
+
+(2) the paper is like the first part of this
+
+(3) this is longer term, and includes color gradient
+
+(4) need to say something, if any, about possible input to DM
+
+
