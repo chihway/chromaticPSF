@@ -1,0 +1,46 @@
+
+
+* all the sims below are generated for 6 filters, 10 chips, 
+  1000 realizations of the atmosphere and the instrument (?)
+  one star image and one galaxy image
+
+* from all sims we measure delta_x, delta_e, delta_R, g, and 
+  towards the end, correlation of these, perhaps
+
+* stars=point source
+  galaxy=some sypical representative gaussian (?) 
+
+============================================================
+
+0) null test: galaxies randomly selected from CatSim, bright star and galaxy 
+have same SED and are located at same position (on a grid)
+- turn off all effects (telescopemode=0 natmospherefile=0 atmdispersion=0)
+- turn on atm but not DCR (telescopemode=0 atmdispersion=0)
+- turn on DCR (telescopemode=0)
+- turn on optics but not detector (detectormode=0)
+- turn on detector
+=> this should all yield zero, at least roughly
+
+1) chromatic PSF test: bright galaxies and stars randomly selected from CatSim, 
+star and galaxy have different SED but are located at same position (on a grid)
+- turn off all effects (telescopemode=0 natmospherefile=0 atmdispersion=0)
+- turn on atm but not DCR (telescopemode=0 atmdispersion=0)
+- turn on DCR (telescopemode=0)
+- turn on optics but not detector (detectormode=0)
+- turn on detector
+=> the difference between 1) and 0) tells us how much chromatic effects are 
+contributed from the different physical effects
+=> can analyze from the results here how different SED types interact
+
+2) PSF interpolation test: same as 1), but now stars are randomly located 
+in a realistic way, and interpolation is needed. 
+- only do the turn on everything tests from now on
+=> different between 2) and 1) tells us how interpolation can (maybe?) average 
+some of the chromatic effects
+
+3) realistic population test: now put in the full population of stars and 
+galaxies (photon noise included), may need to do this on full focal plane?
+- evaluate the systematics caused by these chromatic effects in a full, 
+(sort of) realistic LSST survey
+
+ 
